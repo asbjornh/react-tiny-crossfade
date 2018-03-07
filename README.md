@@ -18,6 +18,7 @@ There are a couple of other libraries like this, like [react-crossfade](https://
 * [react-tiny-transition](https://github.com/asbjornh/react-tiny-transition)
 
 
+<!--
 ## Install
 
 ```console
@@ -30,6 +31,7 @@ or
 yarn add react-tiny-crossfade
 ```
 
+
 ## Import
 
 ```javascript
@@ -39,6 +41,7 @@ var TinyCrossfade = require("react-tiny-crossfade").default;
 // in ES6
 import TinyCrossfade from "react-tiny-crossfade";
 ```
+-->
 
 ## Props:
 
