@@ -1,5 +1,7 @@
 # react-tiny-crossfade
 
+[![npm version](https://img.shields.io/npm/v/react-tiny-crossfade.svg?style=flat)](https://www.npmjs.com/package/react-tiny-crossfade)
+
 TinyCrossfade is a lightweight component for adding css transitions when replacing one component with another. Specifically, TinyCrossfade does these things:
 
 * Measures height and applies it inline so you can add a transition
@@ -20,7 +22,6 @@ There are a couple of other libraries like this, like [react-crossfade](https://
 * [react-tiny-transition](https://github.com/asbjornh/react-tiny-transition)
 
 
-<!--
 ## Install
 
 ```console
@@ -43,7 +44,6 @@ var TinyCrossfade = require("react-tiny-crossfade").default;
 // in ES6
 import TinyCrossfade from "react-tiny-crossfade";
 ```
--->
 
 ## Props:
 
