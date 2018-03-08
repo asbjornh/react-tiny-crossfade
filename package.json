@@ -1,13 +1,10 @@
 {
   "name": "react-tiny-crossfade",
-  "version": "0.0.1",
-  "description": "A component that helps you apply transitions when replacing one component with another",
+  "version": "0.1.0",
+  "description":
+    "A component that helps you apply transitions when replacing one component with another",
   "main": "lib/index.js",
-  "files": [
-    "lib",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["lib", "LICENSE", "README.md"],
   "scripts": {
     "start": "rm -fr lib/ && babel src --out-dir lib --ignore='__tests__'",
     "test": "jest --verbose",
@@ -18,13 +15,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/asbjornh/react-flip-motion.git"
   },
-  "keywords": [
-    "react",
-    "replace",
-    "animation",
-    "children",
-    "transition"
-  ],
+  "keywords": ["react", "replace", "animation", "children", "transition"],
   "contributors": [
     {
       "name": "Asbjorn Hegdahl",
@@ -71,15 +62,9 @@
   },
   "jest": {
     "rootDir": "",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/node_modules/"
-    ],
-    "transformIgnorePatterns": [
-      "<rootDir>/node_modules/"
-    ],
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/"
-    ]
+    "modulePathIgnorePatterns": ["<rootDir>/node_modules/"],
+    "transformIgnorePatterns": ["<rootDir>/node_modules/"],
+    "unmockedModulePathPatterns": ["<rootDir>/node_modules/"]
   },
   "dependencies": {
     "react-tiny-transition": "^2.1.2"

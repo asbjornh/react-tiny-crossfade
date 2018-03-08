@@ -5,6 +5,8 @@ TinyCrossfade is a lightweight component for adding css transitions when replaci
 * Measures height and applies it inline so you can add a transition
 * Adds class names when children are mounting/unmounting so you can add your animation effects.
 
+![tiny-crossfade](https://user-images.githubusercontent.com/13281350/37181669-39179b42-232e-11e8-8fba-241760edb1c9.gif)
+
 ### Browser support:
 TinyCrossfade needs `requestAnimationFrame` and `element.classList` in order to do its thing, so make sure to add polyfills if you need to support older browsers (like IE9 and below).
 
