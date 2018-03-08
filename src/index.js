@@ -42,15 +42,23 @@ class Crossfade extends React.Component {
   setWrapperHeight = () => {
     const wrapper = ReactDOM.findDOMNode(this);
     const child = wrapper && wrapper.firstElementChild;
+    const newHeight = child ? child.offsetHeight : 0;
 
-    if (child) {
-      this.setState({ height: child.offsetHeight });
-    }
+    this.previousHeight = newHeight;
+
+    clearTimeout(this.heightTimer);
+    this.setState({ height: newHeight }, () => {
+      this.heightTimer = setTimeout(() => {
+        this.setState({ height: "auto" });
+      }, this.props.duration);
+    });
   };
 
   transition = nextChildren => {
-    this.setState({ children: null }, () => {
-      clearTimeout(this.delayTimer);
+    clearTimeout(this.delayTimer);
+    clearTimeout(this.heightTimer);
+
+    this.setState({ children: null, height: this.previousHeight }, () => {
       this.delayTimer = setTimeout(() => {
         waitTwoFrames(() => {
           this.setState({ children: nextChildren }, () => {
