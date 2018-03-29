@@ -1,6 +1,6 @@
 {
   "name": "react-tiny-crossfade",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description":
     "A component that helps you apply transitions when replacing one component with another",
   "main": "lib/index.js",
@@ -25,9 +25,9 @@
   "author": "Asbjørn Hegdahl",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/asbjornh/react-crossfade/issues"
+    "url": "https://github.com/asbjornh/react-tiny-crossfade/issues"
   },
-  "homepage": "https://github.com/asbjornh/react-crossfade#readme",
+  "homepage": "https://github.com/asbjornh/react-tiny-crossfade#readme",
   "devDependencies": {
     "babel-cli": "^6.9.0",
     "babel-core": "^6.9.1",
