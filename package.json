@@ -1,6 +1,6 @@
 {
   "name": "react-tiny-crossfade",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description":
     "A component that helps you apply transitions when replacing one component with another",
   "main": "lib/index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/asbjornh/react-flip-motion.git"
+    "url": "git+ssh://git@github.com/asbjornh/react-tiny-crossfade.git"
   },
   "keywords": ["react", "replace", "animation", "children", "transition"],
   "contributors": [
