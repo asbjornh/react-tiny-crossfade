@@ -4,15 +4,6 @@ import PropTypes from "prop-types";
 
 import TinyTransition from "react-tiny-transition";
 
-// Because TinyTransition uses request animation frame, we need to wait two frames before accessing children in the DOM
-function waitTwoFrames(callback) {
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      callback();
-    });
-  });
-}
-
 class Crossfade extends React.Component {
   static propTypes = {
     children: PropTypes.node,
@@ -39,6 +30,19 @@ class Crossfade extends React.Component {
     height: this.props.disableInitialAnimation ? "auto" : 0
   };
 
+  delayTimer = null;
+  heightTimer = null;
+  raf = null;
+
+  // Because TinyTransition uses request animation frame, we need to wait two frames before accessing children in the DOM
+  waitTwoFrames = callback => {
+    this.raf = requestAnimationFrame(() => {
+      this.raf = requestAnimationFrame(() => {
+        callback();
+      });
+    });
+  };
+
   setWrapperHeight = () => {
     const wrapper = ReactDOM.findDOMNode(this);
     const child = wrapper && wrapper.firstElementChild;
@@ -60,9 +64,9 @@ class Crossfade extends React.Component {
 
     this.setState({ children: null, height: this.previousHeight }, () => {
       this.delayTimer = setTimeout(() => {
-        waitTwoFrames(() => {
+        this.waitTwoFrames(() => {
           this.setState({ children: nextChildren }, () => {
-            waitTwoFrames(() => {
+            this.waitTwoFrames(() => {
               this.setWrapperHeight();
             });
           });
@@ -83,6 +87,12 @@ class Crossfade extends React.Component {
     if (nextProps.children !== this.props.children) {
       this.transition(nextProps.children);
     }
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.delayTimer);
+    clearTimeout(this.heightTimer);
+    cancelAnimationFrame(this.raf);
   }
 
   render() {

@@ -5213,7 +5213,7 @@ react-dom@^16.2.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-tiny-transition@^2.1.2:
+react-tiny-transition@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/react-tiny-transition/-/react-tiny-transition-2.1.8.tgz#6cb8ad6bd427dbe490628f93443ba8daa223f88c"
 

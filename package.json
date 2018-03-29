@@ -1,6 +1,6 @@
 {
   "name": "react-tiny-crossfade",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description":
     "A component that helps you apply transitions when replacing one component with another",
   "main": "lib/index.js",
@@ -65,6 +65,6 @@
     "unmockedModulePathPatterns": ["<rootDir>/node_modules/"]
   },
   "dependencies": {
-    "react-tiny-transition": "^2.1.2"
+    "react-tiny-transition": "^2.1.8"
   }
 }
