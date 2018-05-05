@@ -20,45 +20,60 @@ There are a couple of other libraries like this, like [react-crossfade](https://
 ### Other Tiny libraries
 
 * [react-tiny-transition](https://github.com/asbjornh/react-tiny-transition)
+* [react-tiny-collapse](https://github.com/asbjornh/react-tiny-collapse)
 
 
-## Install
+### Install
 
 ```console
 npm install --save react-tiny-crossfade
 ```
 
-or
 
-```console
-yarn add react-tiny-crossfade
-```
+## API:
 
+**children** : React element
+<br/>Single React element
 
-## Import
+---
 
-```javascript
-// in ES5/commonJS
-var TinyCrossfade = require("react-tiny-crossfade").default;
+**component** : String = `"div"`
+<br/>Type of element used for the wrapper node
 
-// in ES6
-import TinyCrossfade from "react-tiny-crossfade";
-```
+---
 
-## Props:
+**duration** : Number = `500`
+<br/>The duration of your css transition (milliseconds)
 
-| Prop         | Type          | Default | Description                                                                       |
-| ------------ | ------------- | --------- | --------------------------------------------------------------------------------- |
-| `children`   | React element |         | Single React element
-| `component`  | String        | "div"   | Type of element used for the wrapper node
-| `duration`   | Number        | 500       | The duration of your css transition (milliseconds)                              |
-| `disableInitialAnimation` | Boolean | false | Disable the animation when TinyTransition mounts
-| `transitionClassNames` | Object        | <pre>{<br>  beforeEnter: "before-enter",<br>  entering: "entering",<br>  beforeLeave: "before-leave",<br>  leaving: "leaving"<br>}</pre>    | Classnames to use when mounting / unmounting |
+---
 
+**disableInitialAnimation** : Boolean = `false`
+<br/>Disable the animation when TinyTransition mounts
 
-#### Example usage:
+---
+
+**transitionClassNames** : Object =
 
 ```js
+{
+	beforeEnter: "before-enter",
+	entering: "entering",
+	beforeLeave: "before-leave",
+	leaving: "leaving"
+}
+```
+Classnames to use when mounting / unmounting
+
+---
+
+
+## Example usage:
+
+```jsx
+import TinyCrossfade from "react-tiny-crossfade";
+
+...
+
 <TinyCrossfade className="component-wrapper">
   {this.state.showComponentA
   	 ? <ComponentA />
@@ -68,7 +83,7 @@ import TinyCrossfade from "react-tiny-crossfade";
 ```
 
 
-#### CSS example:
+## CSS example:
 
 TinyCrossfade will add the following class names (unless you provided your own). When your child component is mounting, `before-enter` will be applied. Here's where you put the initial styles of your mounting animation. One frame later, `entering` will be applied, which is where you put the final animation styles as well as a transition property. Same logic for unmounting-transition.
 

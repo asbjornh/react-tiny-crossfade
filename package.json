@@ -1,6 +1,6 @@
 {
   "name": "react-tiny-crossfade",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description":
     "A component that helps you apply transitions when replacing one component with another",
   "main": "lib/index.js",
