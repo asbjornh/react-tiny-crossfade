@@ -13,9 +13,7 @@ module.exports = () => {
     devServer: {
       stats: "minimal"
     },
-    node: {
-      fs: "empty"
-    },
+    mode: 'development',
     module: {
       rules: [
         {
