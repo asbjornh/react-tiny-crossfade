@@ -11,7 +11,7 @@ class Crossfade extends React.Component {
     component: PropTypes.string,
     disableInitialAnimation: PropTypes.bool,
     duration: PropTypes.number,
-    transitionClassNames: PropTypes.shape({
+    classNames: PropTypes.shape({
       beforeEnter: PropTypes.string,
       entering: PropTypes.string,
       beforeLeave: PropTypes.string,
@@ -104,7 +104,7 @@ class Crossfade extends React.Component {
         style={{ height: this.state.height }}
       >
         <TinyTransition
-          classNames={this.props.transitionClassNames}
+          classNames={this.props.classNames}
           duration={this.props.duration}
           disableInitialAnimation={this.props.disableInitialAnimation}
         >

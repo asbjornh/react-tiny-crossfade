@@ -52,7 +52,7 @@ npm install --save react-tiny-crossfade
 
 ---
 
-**transitionClassNames** : Object =
+**classNames** : Object =
 
 ```js
 {

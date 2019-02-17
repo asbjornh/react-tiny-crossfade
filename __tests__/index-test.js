@@ -4,7 +4,7 @@ jest.disableAutomock().useRealTimers();
 
 const React = require("react");
 const ReactDOM = require("react-dom");
-const TinyCrossfade = require("..").default;
+const TinyCrossfade = require("../lib").default;
 const TestUtils = require("react-dom/test-utils");
 
 global.requestAnimationFrame = callback => {
@@ -120,7 +120,7 @@ describe("TinyCrossfade", () => {
         return (
           <TinyCrossfade
             disableInitialAnimation={true}
-            transitionClassNames={{
+            classNames={{
               beforeEnter: "test1",
               entering: "test2",
               beforeLeave: "test3",
