@@ -1,3 +1,7 @@
+# 2.0.0
+
+- BREAKING: children now depends on `key` in order to be animated (Fixes [#3](https://github.com/asbjornh/react-tiny-crossfade/issues/3))
+
 # 1.0.0
 
 - BREAKING: Renames `transitionClassNames` -> `classNames`

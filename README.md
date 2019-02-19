@@ -4,24 +4,23 @@
 
 TinyCrossfade is a lightweight component for adding css transitions when replacing one component with another. Specifically, TinyCrossfade does these things:
 
-* Measures height and applies it inline so you can add a transition
-* Adds class names when children are mounting/unmounting so you can add your animation effects.
+- Measures height and applies it inline so you can add a transition
+- Adds class names when children are mounting/unmounting so you can add your animation effects.
 
 ![tiny-crossfade](https://user-images.githubusercontent.com/13281350/37181669-39179b42-232e-11e8-8fba-241760edb1c9.gif)
 
 ### Browser support:
+
 TinyCrossfade needs `requestAnimationFrame` and `element.classList` in order to do its thing, so make sure to add polyfills if you need to support older browsers (like IE9 and below).
 
-
 ### Why it exists
-There are a couple of other libraries like this, like [react-crossfade](https://github.com/m-anikanov/react-crossfade) or [react-css-transition-replace](https://github.com/marnusw/react-css-transition-replace). These usually use [react-transition-group](https://github.com/reactjs/react-transition-group) which is great, but in some cases it is just too big a library if you just want to do simple css stuff. TinyCrossfade is meant to be a smaller alternative and uses [react-tiny-transition](https://github.com/asbjornh/react-tiny-transition) instead, which is a much smaller library.
 
+There are a couple of other libraries like this, like [react-crossfade](https://github.com/m-anikanov/react-crossfade) or [react-css-transition-replace](https://github.com/marnusw/react-css-transition-replace). These usually use [react-transition-group](https://github.com/reactjs/react-transition-group) which is great, but in some cases it is just too big a library if you just want to do simple css stuff. TinyCrossfade is meant to be a smaller alternative and uses [react-tiny-transition](https://github.com/asbjornh/react-tiny-transition) instead, which is a much smaller library.
 
 ### Other Tiny libraries
 
-* [react-tiny-transition](https://github.com/asbjornh/react-tiny-transition)
-* [react-tiny-collapse](https://github.com/asbjornh/react-tiny-collapse)
-
+- [react-tiny-transition](https://github.com/asbjornh/react-tiny-transition)
+- [react-tiny-collapse](https://github.com/asbjornh/react-tiny-collapse)
 
 ### Install
 
@@ -29,11 +28,10 @@ There are a couple of other libraries like this, like [react-crossfade](https://
 npm install --save react-tiny-crossfade
 ```
 
-
 ## API:
 
 **children** : React element
-<br/>Single React element
+<br/>Single React element. The element **must** have a `key`, in order for `react-tiny-crossfade` to tell whether to animate or not. See example below
 
 ---
 
@@ -62,10 +60,10 @@ npm install --save react-tiny-crossfade
 	leaving: "leaving"
 }
 ```
+
 Classnames to use when mounting / unmounting
 
 ---
-
 
 ## Example usage:
 
@@ -76,12 +74,11 @@ import TinyCrossfade from "react-tiny-crossfade";
 
 <TinyCrossfade className="component-wrapper">
   {this.state.showComponentA
-  	 ? <ComponentA />
-  	 : <ComponentB />
+  	 ? <ComponentA key="a" /> // NOTE: Key is required for animations to work
+  	 : <ComponentB key="b" />
   }
 </TinyCrossfade>
 ```
-
 
 ## CSS example:
 

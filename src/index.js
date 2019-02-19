@@ -84,8 +84,10 @@ class Crossfade extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.children !== this.props.children) {
+    if (prevProps.children.key !== this.props.children.key) {
       this.transition(this.props.children);
+    } else if (prevProps.children !== this.props.children) {
+      this.setState({ children: this.props.children });
     }
   }
 

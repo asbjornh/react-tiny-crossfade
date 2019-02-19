@@ -77,7 +77,11 @@ describe("TinyCrossfade", () => {
       render() {
         return (
           <TinyCrossfade disableInitialAnimation={true}>
-            {this.state.showA ? <View>{"foo"}</View> : <View>{"bar"}</View>}
+            {this.state.showA ? (
+              <View key="a">{"foo"}</View>
+            ) : (
+              <View key="b">{"bar"}</View>
+            )}
           </TinyCrossfade>
         );
       }
@@ -85,26 +89,27 @@ describe("TinyCrossfade", () => {
 
     const testComponent = TestUtils.renderIntoDocument(<TestComponent />);
 
-    testComponent.setState({
-      showA: false
-    });
-
     return new Promise(done => {
-      setTimeout(() => {
-        const node = ReactDOM.findDOMNode(testComponent);
-        let child = node.firstElementChild;
-
-        expect(!!child).toBe(true);
-        expect(child.getAttribute("class")).toBe("before-leave leaving");
-
-        testComponent.setState({ showA: false }, () => {
+      testComponent.setState(
+        {
+          showA: false
+        },
+        () => {
           setTimeout(() => {
-            child = node.firstElementChild;
-            expect(child.getAttribute("class")).toBe("before-enter entering");
-            done();
-          }, 600);
-        });
-      }, 100);
+            const node = ReactDOM.findDOMNode(testComponent);
+            const child = node.firstElementChild;
+
+            expect(!!child).toBe(true);
+            expect(child.getAttribute("class")).toBe("before-leave leaving");
+
+            setTimeout(() => {
+              const child = node.firstElementChild;
+              expect(child.getAttribute("class")).toBe("before-enter entering");
+              done();
+            }, 500);
+          }, 20);
+        }
+      );
     });
   });
 
@@ -127,7 +132,11 @@ describe("TinyCrossfade", () => {
               leaving: "test4"
             }}
           >
-            {this.state.showA ? <View>{"foo"}</View> : <View>{"bar"}</View>}
+            {this.state.showA ? (
+              <View key="a">{"foo"}</View>
+            ) : (
+              <View key="b">{"bar"}</View>
+            )}
           </TinyCrossfade>
         );
       }
@@ -135,26 +144,27 @@ describe("TinyCrossfade", () => {
 
     const testComponent = TestUtils.renderIntoDocument(<TestComponent />);
 
-    testComponent.setState({
-      showA: true
-    });
-
     return new Promise(done => {
-      setTimeout(() => {
-        const node = ReactDOM.findDOMNode(testComponent);
-        let child = node.firstElementChild;
-
-        expect(!!child).toBe(true);
-        expect(child.getAttribute("class")).toBe("test3 test4");
-
-        testComponent.setState({ showA: false }, () => {
+      testComponent.setState(
+        {
+          showA: false
+        },
+        () => {
           setTimeout(() => {
-            child = node.firstElementChild;
-            expect(child.getAttribute("class")).toBe("test1 test2");
-            done();
-          }, 600);
-        });
-      }, 100);
+            const node = ReactDOM.findDOMNode(testComponent);
+            const child = node.firstElementChild;
+
+            expect(!!child).toBe(true);
+            expect(child.getAttribute("class")).toBe("test3 test4");
+
+            setTimeout(() => {
+              const child = node.firstElementChild;
+              expect(child.getAttribute("class")).toBe("test1 test2");
+              done();
+            }, 500);
+          }, 20);
+        }
+      );
     });
   });
 });

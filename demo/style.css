@@ -28,25 +28,25 @@ html {
   will-change: opacity, transform;
 }
 
-.component.before-enter {
+.component.test1 {
   opacity: 0;
   transform: scale(0.7);
 }
 
-.component.entering {
+.component.test2 {
   opacity: 1;
   transform: none;
   transition: opacity 0.5s, transform 0.5s cubic-bezier(0.36, 0.06, 0, 1);
 }
 
-.component.entering,
-.component.before-leave {
+.component.test2,
+.component.test3 {
   opacity: 1;
   transform: none;
   transition: opacity 0.5s, transform 0.5s cubic-bezier(0.36, 0.06, 0, 1);
 }
 
-.component.leaving {
+.component.test4 {
   opacity: 0;
   transform: scale(0.7);
 }
