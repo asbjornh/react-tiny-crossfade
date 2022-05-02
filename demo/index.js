@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
 require("./style.css");
 
@@ -8,7 +8,7 @@ import Crossfade from "../src";
 class App extends Component {
   state = {
     content: "Component A",
-    showA: true
+    showA: true,
   };
 
   toggle = () => {
@@ -31,7 +31,7 @@ class App extends Component {
             beforeEnter: "test1",
             entering: "test2",
             beforeLeave: "test3",
-            leaving: "test4"
+            leaving: "test4",
           }}
           disableInitialAnimation={true}
         >
@@ -51,4 +51,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("App"));
+createRoot(document.getElementById("App")).render(<App />);
