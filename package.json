@@ -3,6 +3,7 @@
   "version": "2.1.0",
   "description": "A component that helps you apply transitions when replacing one component with another",
   "main": "lib/index.js",
+  "types": "src/index.d.ts",
   "files": [
     "lib",
     "CHANGELOG.md",
