@@ -1,5 +1,5 @@
 
-interface Props<T> extends DOMAttributes<T> {
+interface Props {
     children: JSX.Element;
     component?: string;
     duration?: number;
