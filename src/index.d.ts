@@ -4,7 +4,7 @@ interface Props<T> extends DOMAttributes<T> {
     component?: string;
     duration?: number;
     disableInitialAnimation?: boolean;
-    className: string;
+    className?: string;
     classNames?: {
         beforeEnter: string,
         entering: string,
