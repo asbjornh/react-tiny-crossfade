@@ -1,3 +1,7 @@
+# 2.2.0
+
+- Adds TypeScript typings
+
 # 2.1.0
 
 - Adds react 17 and 18 as peer dependencies
